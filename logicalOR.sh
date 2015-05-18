@@ -1,10 +1,14 @@
 #!/bin/bash
-echo "Enter a character:\c"
-read char
-if [ `echo $char | wc -c` -eq 2 ] # read gets the \n character also. Hence 2
+echo "Enter a lowercase character:\c"
+read var
+if [ `echo $var | wc -c` -eq 2 ]
 then
-	echo "You have entered ONE character"
+        if [ $var = a -o $var = e -o $var = i -o $var = o -o $var = u ]
+	then
+		echo "You entered a vowel"
+	else
+		echo "You entered consonant"
+	fi
 else
 	echo "Invalid input"
 fi
-
